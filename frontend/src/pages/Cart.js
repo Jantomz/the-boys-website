@@ -4,14 +4,11 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function Cart() {
-  const [cart, setCart] = useState();
+  const [cart, setCart] = useState(
+    JSON.parse(localStorage.getItem("cart")) ||
+      localStorage.setItem("cart", "[]")
+  );
   const [email, setEmail] = useState();
-
-  const optionsCursorTrueWithMargin = {
-    followCursor: true,
-    shiftX: 20,
-    shiftY: 0,
-  };
 
   useEffect(() => {
     setCart(JSON.parse(localStorage.getItem("cart")));
