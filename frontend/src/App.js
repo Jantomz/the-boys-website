@@ -8,6 +8,8 @@ import Events from "./pages/Events";
 import Shop from "./pages/Shop";
 import Impact from "./pages/Impact";
 import NotFound from "./pages/NotFound";
+import Product from "./pages/Product";
+import Cart from "./pages/Cart";
 
 function App() {
   return (
@@ -16,10 +18,12 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/donate" element={<Donate />} />
+        {/* <Route path="/donate" element={<Donate />} /> */}
         <Route path="/events" element={<Events />} />
         <Route path="/shop" element={<Shop />} />
-        <Route path="/impact" element={<Impact />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/shop/:productId" element={<Product />} />
+        {/* <Route path="/impact" element={<Impact />} /> */}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>

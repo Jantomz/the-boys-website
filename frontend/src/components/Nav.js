@@ -5,15 +5,28 @@ export default function Nav() {
     <div>
       <nav>
         <ul className="flex font-medium text-xl p-20 items-center justify-between">
-          <li>
+          <li className=" hover:text-saffron transition-all hover:font-bold">
             <Link to="/" className="text-3xl">
               The Boys
             </Link>
           </li>
           <ul className="flex gap-[3em] font-medium text-xl flex-row-reverse items-center">
-            <li className="p-3 bg-saffron rounded-md">
-              <Link to="/donate" rel="noopener noreferrer">
+            <li className="p-3 bg-saffron rounded-md hover:bg-platinum hover:text-celestial transition-all">
+              <Link
+                to="https://support.cancer.ca/site/TR/RelayForLife/RFLY_NW_odd_?team_id=514205&pg=team&fr_id=29599"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 Donate
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/cart"
+                rel="noopener noreferrer"
+                className=" hover:text-saffron hover:underline-offset-8 hover:underline transition-all"
+              >
+                Cart
               </Link>
             </li>
             <li>
@@ -35,7 +48,7 @@ export default function Nav() {
               </Link>
             </li>
 
-            <li>
+            {/* <li>
               <Link
                 to="/impact"
                 rel="noopener noreferrer"
@@ -43,7 +56,7 @@ export default function Nav() {
               >
                 Our Impact
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link
                 to="/about"
