@@ -18,16 +18,16 @@ export default function Shop() {
       name: "Pikachu",
       price: 3,
       size: "3cm x 4xm",
-      img: "https://files.catbox.moe/ietrkw.png",
+      img: "https://files.catbox.moe/049846.png",
       description: "This is a patch for the University of Waterloo.",
     },
     {
       id: 2,
       tag: "New",
-      name: "uOttawa Patch",
+      name: "uOttawa",
       price: 3,
       size: "3cm x 4xm",
-      img: "https://files.catbox.moe/l4juh9.png",
+      img: "https://files.catbox.moe/nb0gc0.png",
       description: "This is a patch for the University of Ottawa.",
     },
     {
@@ -36,7 +36,7 @@ export default function Shop() {
       name: "Husky",
       price: 5,
       size: "3cm x 4xm",
-      img: "https://files.catbox.moe/0slvmj.png",
+      img: "https://files.catbox.moe/6mbu83.png",
       description: "This is a patch for the University of Toronto.",
     },
     {
@@ -45,7 +45,7 @@ export default function Shop() {
       name: "Carleton",
       price: 3,
       size: "3cm x 4xm",
-      img: "https://files.catbox.moe/64ce1p.png",
+      img: "https://files.catbox.moe/9vfxv8.png",
       description: "This is a patch for Carleton University.",
     },
     {
@@ -54,7 +54,7 @@ export default function Shop() {
       name: "Lakers",
       price: 5,
       size: "3cm x 4xm",
-      img: "https://files.catbox.moe/mpna7x.png",
+      img: "https://files.catbox.moe/3udjme.png",
       description: "This is a patch for the Los Angeles Lakers.",
     },
     {
@@ -128,6 +128,15 @@ export default function Shop() {
       size: "3cm x 4xm",
       img: "https://files.catbox.moe/esbh2c.png",
       description: "This is a patch for fans of The Boys TV show.",
+    },
+    {
+      id: 14,
+      tag: "New",
+      name: "Custom Order!",
+      price: 3,
+      size: "3cm x 4xm",
+      img: "https://files.catbox.moe/g9wsuq.png",
+      description: `Write your desired patch design in the "customizations" field at checkout!`,
     },
   ];
 
