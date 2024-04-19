@@ -1,7 +1,16 @@
+import { useEffect } from "react";
 import ContentContainer from "../components/ContentContainer";
 import ProductCard from "../components/ProductCard";
 
 export default function Shop() {
+  useEffect(() => {
+    const load = async () => {
+      await fetch("https://the-boys-server.onrender.com/", {
+        method: "GET",
+      });
+    };
+    load();
+  }, []);
   const products = [
     {
       id: 1,

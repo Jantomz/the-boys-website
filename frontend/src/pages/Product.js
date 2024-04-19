@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import ContentContainer from "../components/ContentContainer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -9,6 +9,15 @@ export default function Product() {
   const [customizations, setCustomizations] = useState("");
 
   // TODO: Make images into a carousel, add random assorted bundle and customization products, add email system
+
+  useEffect(() => {
+    const load = async () => {
+      await fetch("https://the-boys-server.onrender.com/", {
+        method: "GET",
+      });
+    };
+    load();
+  }, []);
 
   const products = [
     {

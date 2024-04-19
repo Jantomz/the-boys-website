@@ -1,7 +1,17 @@
+import { useEffect } from "react";
 import ContentContainer from "../components/ContentContainer";
 import sample from "../components/sample.mp4";
 
 export default function Events() {
+  useEffect(() => {
+    const load = async () => {
+      await fetch("https://the-boys-server.onrender.com/", {
+        method: "GET",
+      });
+    };
+    load();
+  }, []);
+
   return (
     <div>
       <header className="">

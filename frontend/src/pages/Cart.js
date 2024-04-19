@@ -15,6 +15,12 @@ export default function Cart() {
 
   useEffect(() => {
     setCart(JSON.parse(localStorage.getItem("cart")));
+    const load = async () => {
+      await fetch("https://the-boys-server.onrender.com/", {
+        method: "GET",
+      });
+    };
+    load();
   }, []);
 
   const totalPrice = cart?.reduce(
@@ -42,17 +48,20 @@ export default function Cart() {
         "\n\n"
       )}\n\nTotal: $${totalPrice} CAD\n\nThank you for shopping with us! We will contact you within 3-5 days when your order is ready\n\nSincerely, The Boys Shop Team\n\nThis is an automated email. Please do not reply to this email.`;
 
-    const response = await fetch("http://localhost:8000/send-mail", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: email,
-        subject: "Order Confirmation",
-        text: emailText,
-      }),
-    });
+    const response = await fetch(
+      "https://the-boys-server.onrender.com/send-mail",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+          subject: "Order Confirmation",
+          text: emailText,
+        }),
+      }
+    );
 
     if (response.status === 200) {
       toast.success("Please Verify Order in Email: " + email, {

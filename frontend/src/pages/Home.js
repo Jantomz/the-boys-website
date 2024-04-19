@@ -1,6 +1,15 @@
+import { useEffect } from "react";
 import Header from "../components/Header";
 
 export default function Home() {
+  useEffect(() => {
+    const load = async () => {
+      await fetch("https://the-boys-server.onrender.com/", {
+        method: "GET",
+      });
+    };
+    load();
+  }, []);
   return (
     <div>
       <Header></Header>

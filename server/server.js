@@ -12,6 +12,10 @@ app.use(cors());
 
 dotenv.config(); // Load environment variables from .env file
 
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
 // Define your route
 app.post("/send-mail", async (req, res) => {
   const { email, subject, text } = req.body;
