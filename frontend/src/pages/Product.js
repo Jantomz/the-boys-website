@@ -110,12 +110,15 @@ export default function Product() {
   };
 
   return (
-    <ContentContainer extraClass="flex">
+    <ContentContainer extraClass="flex max-md:block">
       <button className="mr-16" onClick={() => window.history.back()}>
         <i class="fa-solid fa-arrow-left fa-2x"></i>
       </button>
-      <img src={product.img} className="w-[50%]"></img>
-      <div className="mx-12 flex flex-col justify-between">
+      <img
+        src={product.img}
+        className="w-[50%] max-md:m-4 max-md:w-[90%] rounded-md h-[50%]"
+      ></img>
+      <div className="mx-12 flex flex-col justify-between max-md:gap-6 gap-2">
         <h3>The Boys</h3>
         <h1 className="text-6xl">{product.name}</h1>
         <h2 className="text-lg">{product.description}</h2>
