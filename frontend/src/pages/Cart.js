@@ -8,6 +8,9 @@ export default function Cart() {
     JSON.parse(localStorage.getItem("cart")) ||
       localStorage.setItem("cart", "[]")
   );
+
+  const [name, setName] = useState("Customer");
+
   const [email, setEmail] = useState();
 
   useEffect(() => {
@@ -25,13 +28,45 @@ export default function Cart() {
     setCart(newCart);
   };
 
-  const handlePlaceOrder = () => {
-    toast.success("Please Verify Order in Email", {
-      position: "top-right",
-      autoClose: false,
+  const handlePlaceOrder = async () => {
+    const emailText = `Hello ${name},\n\nThank you for shopping with us. Your order is as follows:\n\n${cart
+      .map(
+        (item) =>
+          `${item.product.name} x ${item.quantity} = $${
+            item.product.price
+          } CAD\nCustomizations: ${
+            item.customizations?.length > 0 ? item.customizations : "None"
+          }`
+      )
+      .join(
+        "\n\n"
+      )}\n\nTotal: $${totalPrice} CAD\n\nThank you for shopping with us! We will contact you within 3-5 days when your order is ready\n\nSincerely, The Boys Shop Team\n\nThis is an automated email. Please do not reply to this email.`;
+
+    const response = await fetch("http://localhost:8000/send-mail", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+        subject: "Order Confirmation",
+        text: emailText,
+      }),
     });
-    localStorage.setItem("cart", "[]");
-    setCart([]);
+
+    if (response.status === 200) {
+      toast.success("Please Verify Order in Email: " + email, {
+        position: "top-right",
+        autoClose: false,
+      });
+      localStorage.setItem("cart", "[]");
+      setCart([]);
+    } else {
+      toast.error("Error Confirming Order", {
+        position: "top-right",
+        autoClose: false,
+      });
+    }
   };
 
   const isValidEmail = (email) => {
@@ -42,7 +77,9 @@ export default function Cart() {
   return (
     <div>
       <header className="z-400">
-        <h1 className="text-9xl font-bold text-center text-white">Shop</h1>
+        <h1 className="text-9xl font-bold text-center text-white max-md:text-4xl">
+          Shop
+        </h1>
       </header>
       <ContentContainer extraClass="w-[40%] translate-y-12">
         {cart?.length === 0 ? (
@@ -60,7 +97,7 @@ export default function Cart() {
 
             {cart?.map((item, index) => (
               <div key={item.product.id} className="bg-celestial p-4 my-4">
-                <div className="flex justify-between items-center">
+                <div className="flex justify-between items-center max-sm:block">
                   <a className="flex gap-3" href={`/shop/${item.product.id}`}>
                     <img src={item.product.img} className="w-[50px]"></img>
                     <div>
@@ -92,20 +129,28 @@ export default function Cart() {
                 Contact and Receipt Email{" "}
                 <span className="text-red-400">(required)</span>:
               </h2>
+
               <input
                 type="email"
-                className="p-4 w-[30%] text-black m-1"
+                className="p-4 w-[30%] text-black m-1 max-sm:w-full"
                 onChange={(e) => setEmail(e.target.value)}
               ></input>
             </div>
-
+            <div>
+              <h2>Name:</h2>
+              <input
+                type="text"
+                className="p-4 w-[30%] text-black m-1 max-sm:w-full"
+                onChange={(e) => setName(e.target.value)}
+              ></input>
+            </div>
             <button
               className={`p-4 bg-saffron text-xl rounded-sm  transition-all my-4 ${
                 isValidEmail(email)
                   ? "hover:bg-platinum hover:text-celestial"
                   : "opacity-50"
               }`}
-              disabled={!isValidEmail(email)}
+              disabled={!(isValidEmail(email) && name.length !== 0)}
               onClick={handlePlaceOrder}
             >
               Place Order

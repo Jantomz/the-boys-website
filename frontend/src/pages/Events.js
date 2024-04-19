@@ -5,10 +5,12 @@ export default function Events() {
   return (
     <div>
       <header className="">
-        <h1 className="text-9xl font-bold text-center ">Events</h1>
+        <h1 className="text-9xl font-bold text-center max-md:text-4xl">
+          Events
+        </h1>
         <p className="text-center text-xl">Who are we?</p>
         <video
-          className="absolute top-0 h-[50%] w-full object-cover"
+          className="absolute top-0 h-[50%] w-full object-cover max-sm:hidden"
           autoPlay
           loop
           muted
@@ -17,9 +19,9 @@ export default function Events() {
           <source src={sample} type="video/mp4" />
         </video>
       </header>
-      <div className="h-44"></div>
+      <div className="h-44 max-sm:h-12"></div>
       <ContentContainer>
-        <p className="">
+        <p className="max-sm:text-xs">
           We are a dedicated team at Relay for Life, committed to supporting
           cancer research, raising awareness, and honoring those affected by
           cancer. Through fundraising events, community outreach, and

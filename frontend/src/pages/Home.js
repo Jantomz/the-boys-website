@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div>
       <Header></Header>
-      <section className="flex justify-center pt-24 gap-12">
+      <section className="flex justify-center pt-24 gap-12 max-sm:flex-col max-sm:items-center">
         <a
           href="https://support.cancer.ca/site/SPageServer/?pagename=RFLY_NW_AboutRelayForLife"
           target="_blank"

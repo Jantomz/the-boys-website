@@ -4,13 +4,13 @@ export default function Nav() {
   return (
     <div>
       <nav>
-        <ul className="flex font-medium text-xl p-20 items-center justify-between">
-          <li className=" hover:text-saffron transition-all hover:font-bold">
-            <Link to="/" className="text-3xl">
+        <ul className="flex font-medium text-xl p-20 items-center justify-between max-lg:block">
+          <li className=" hover:text-saffron transition-all hover:font-bold max-md:text-center max-md:mb-12">
+            <Link to="/" className="text-3xl max-md:text-5xl">
               The Boys
             </Link>
           </li>
-          <ul className="flex gap-[3em] font-medium text-xl flex-row-reverse items-center">
+          <ul className="flex gap-[2em] font-medium text-xl flex-row-reverse items-center flex-wrap-reverse max-md:justify-center max-sm:text-sm">
             <li className="p-3 bg-saffron rounded-md hover:bg-platinum hover:text-celestial transition-all">
               <Link
                 to="https://support.cancer.ca/site/TR/RelayForLife/RFLY_NW_odd_?team_id=514205&pg=team&fr_id=29599"
