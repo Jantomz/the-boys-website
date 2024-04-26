@@ -4,6 +4,21 @@ import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+import avocadoImg from "../images/Avocado.png";
+import bananaImg from "../images/Banana.png";
+import beachImg from "../images/Beach.png";
+import breastCancerImg from "../images/BreastCancer.png";
+import canadaImg from "../images/Canada.png";
+import daffodilImg from "../images/Daffodil.png";
+import glassesImg from "../images/Glasses.png";
+import huskyImg from "../images/Husky.png";
+import relayImg from "../images/Relay.png";
+import sacredHuskiesImg from "../images/SacredHuskies.png";
+import shhs2024Img from "../images/SHHS2024.png";
+import shhs2025Img from "../images/SHHS2025.png";
+import smileyImg from "../images/Smiley.png";
+import specialImg from "../images/Special.png";
+
 export default function Product() {
   const { productId } = useParams();
   const [customizations, setCustomizations] = useState("");
@@ -23,128 +38,148 @@ export default function Product() {
     {
       id: 1,
       tag: "New",
-      name: "Pikachu",
+      name: "Avocado",
       price: 3,
       size: "3cm x 4xm",
-      img: "https://files.catbox.moe/049846.png",
-      description: "This is a patch for the University of Waterloo.",
+      img: avocadoImg,
+      description: "This is a patch for avocado lovers.",
     },
     {
       id: 2,
       tag: "New",
-      name: "uOttawa",
+      name: "Banana",
       price: 3,
       size: "3cm x 4xm",
-      img: "https://files.catbox.moe/nb0gc0.png",
-      description: "This is a patch for the University of Ottawa.",
+      img: bananaImg,
+      description: "This is a patch for banana enthusiasts.",
     },
     {
       id: 3,
       tag: "New",
-      name: "Husky",
+      name: "Beach",
       price: 5,
       size: "3cm x 4xm",
-      img: "https://files.catbox.moe/6mbu83.png",
-      description: "This is a patch for the University of Toronto.",
+      img: beachImg,
+      description: "This is a patch for beach lovers.",
     },
     {
       id: 4,
       tag: "New",
-      name: "Carleton",
+      name: "Breast Cancer Ribbon",
       price: 3,
       size: "3cm x 4xm",
-      img: "https://files.catbox.moe/9vfxv8.png",
-      description: "This is a patch for Carleton University.",
+      img: breastCancerImg,
+      description: "This is a patch to support breast cancer awareness.",
     },
     {
       id: 5,
       tag: "New",
-      name: "Lakers",
-      price: 5,
+      name: "Canada",
+      price: 3,
       size: "3cm x 4xm",
-      img: "https://files.catbox.moe/3udjme.png",
-      description: "This is a patch for the Los Angeles Lakers.",
+      img: canadaImg,
+      description: "This is a patch for proud Canadians.",
     },
     {
       id: 6,
       tag: "New",
-      name: "SHHS",
+      name: "Daffodil",
       price: 3,
       size: "3cm x 4xm",
-      img: "https://files.catbox.moe/9602gz.png",
-      description: "This is a patch for Sacred Heart High School.",
+      img: daffodilImg,
+      description: "This is a patch with a daffodil design.",
     },
     {
       id: 7,
       tag: "New",
-      name: "NHL",
-      price: 3,
+      name: "Glasses",
+      price: 5,
       size: "3cm x 4xm",
-      img: "https://files.catbox.moe/3dnw95.png",
-      description: "This is a patch for the National Hockey League.",
+      img: glassesImg,
+      description: "This is a patch for glasses wearers.",
     },
     {
       id: 8,
       tag: "New",
-      name: "Relay",
+      name: "Husky",
       price: 3,
       size: "3cm x 4xm",
-      img: "https://files.catbox.moe/xfmwfc.png",
-      description: "This is a patch for Relay for Life.",
+      img: huskyImg,
+      description: "This is a patch for husky lovers.",
     },
     {
       id: 9,
       tag: "New",
-      name: "Spiderman",
+      name: "Relay",
       price: 3,
       size: "3cm x 4xm",
-      img: "https://files.catbox.moe/4uiu1x.png",
-      description: "This is a patch for Spiderman fans.",
+      img: relayImg,
+      description: "This is a patch for relay race participants.",
     },
     {
       id: 10,
       tag: "New",
-      name: "Daffodil",
+      name: "Sacred Huskies",
       price: 3,
       size: "3cm x 4xm",
-      img: "https://files.catbox.moe/syx9as.png",
-      description: "This is a patch with a daffodil design.",
+      img: sacredHuskiesImg,
+      description: "This is a patch for fans of Sacred Heart High School.",
     },
     {
       id: 11,
       tag: "New",
-      name: "Raptors",
+      name: "SHHS 2024 Grads",
       price: 3,
       size: "3cm x 4xm",
-      img: "https://files.catbox.moe/r87vs9.png",
-      description: "This is a patch for the Toronto Raptors.",
+      img: shhs2024Img,
+      description:
+        "This is a patch for the graduating class of 2024 at Sacred Heart High School.",
     },
     {
       id: 12,
       tag: "New",
-      name: "Pokeball",
+      name: "SHHS 2025 Grads",
       price: 3,
       size: "3cm x 4xm",
-      img: "https://files.catbox.moe/ctbkp8.png",
-      description: "This is a patch with a pokeball design.",
+      img: shhs2025Img,
+      description:
+        "This is a patch for the graduating class of 2025 at Sacred Heart High School.",
     },
     {
       id: 13,
       tag: "New",
-      name: "The Boys",
-      price: 3,
+      name: "Smiley",
+      price: 5,
       size: "3cm x 4xm",
-      img: "https://files.catbox.moe/esbh2c.png",
-      description: "This is a patch for fans of The Boys TV show.",
+      img: smileyImg,
+      description: "This is a patch with a smiley face design.",
     },
     {
       id: 14,
       tag: "New",
       name: "Custom Order!",
-      price: 3,
-      size: "3cm x 4xm",
+      price: 5,
+      size: "Max: 4in x 4in",
       img: "https://files.catbox.moe/g9wsuq.png",
-      description: `Write your desired patch design in the "customizations" field at checkout!`,
+      description: `Write your desired patch design in the "customizations" field at checkout! We'll email you about more information soon!`,
+    },
+    {
+      id: 15,
+      tag: "New",
+      name: "Shop Bundle of 4",
+      price: 7,
+      size: "4 of 3cm x 4cm",
+      img: specialImg,
+      description: `Write the four patch designs you would like from our website in the "customizations" field at checkout! We'll email you about more information soon!`,
+    },
+    {
+      id: 16,
+      tag: "New",
+      name: "Mystery Package of 10",
+      price: 15,
+      size: "10 of 3cm x 4cm",
+      img: specialImg,
+      description: `We'll send you a surprise package of 10 assorted patches!`,
     },
   ];
 
